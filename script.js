@@ -33,7 +33,8 @@ function playGame() {
       return `Computer wins! ${computerChoice} beats ${humanChoice}`;
     }
   }
-  for (let i = 0; i < 5; i++) {
+  const TOTAL_ROUNDS = 5;
+  for (let i = 0; i < TOTAL_ROUNDS; i++) {
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
     console.log(playRound(humanSelection, computerSelection));
