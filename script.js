@@ -10,8 +10,8 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-  const userInput = prompt("Do you choose rock, paper or scissors?");
-  return userInput;
+  const humanInput = prompt("Do you choose rock, paper or scissors?");
+  return humanInput;
 }
 
 function playGame() {
