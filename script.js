@@ -27,3 +27,15 @@ function playRound(humanChoice, computerChoice) {
     return `Computer wins! ${computerChoice} beats ${humanChoice}`;
   }
 }
+
+const choices = document.querySelector(".choices");
+
+function handleChoice(e) {
+  if (e.target.tagName !== "BUTTON") return;
+  const humanSelection = e.target.textContent;
+  const computerSelection = getComputerChoice();
+  console.log(playRound(humanSelection, computerSelection));
+  console.log(humanScore, computerScore);
+}
+
+choices.addEventListener("click", handleChoice);
