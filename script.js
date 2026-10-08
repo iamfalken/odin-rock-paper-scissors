@@ -29,13 +29,15 @@ function playRound(humanChoice, computerChoice) {
 }
 
 const choices = document.querySelector(".choices");
+const roundResult = document.querySelector(".round-result");
+const score = document.querySelector(".score");
 
 function handleChoice(e) {
   if (e.target.tagName !== "BUTTON") return;
   const humanSelection = e.target.textContent;
   const computerSelection = getComputerChoice();
-  console.log(playRound(humanSelection, computerSelection));
-  console.log(humanScore, computerScore);
+  roundResult.textContent = playRound(humanSelection, computerSelection);
+  score.textContent = `You ${humanScore} - Computer ${computerScore}`;
 }
 
 choices.addEventListener("click", handleChoice);
