@@ -31,13 +31,20 @@ function playRound(humanChoice, computerChoice) {
 const choices = document.querySelector(".choices");
 const roundResult = document.querySelector(".round-result");
 const score = document.querySelector(".score");
+const winner = document.querySelector(".winner");
 
 function handleChoice(e) {
+  if (humanScore === 5 || computerScore === 5) return;
   if (e.target.tagName !== "BUTTON") return;
   const humanSelection = e.target.textContent;
   const computerSelection = getComputerChoice();
   roundResult.textContent = playRound(humanSelection, computerSelection);
   score.textContent = `You ${humanScore} - Computer ${computerScore}`;
+  if (humanScore === 5) {
+    winner.textContent = "Congratulations! You won the game!";
+  } else if (computerScore === 5) {
+    winner.textContent = "Sorry! The computer won the game!";
+  }
 }
 
 choices.addEventListener("click", handleChoice);
